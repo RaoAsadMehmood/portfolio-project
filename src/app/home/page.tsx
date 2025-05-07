@@ -157,20 +157,20 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* <section
-  ref={skillsRef}
-  className="w-full py-16 px-6 md:px-12 lg:px-24 bg-gradient-to-l from-black to-teal-900/30 bg-[length:200%_200%] bg-right transition-all duration-1000"
->
-  <div className="max-w-4xl mx-auto space-y-6">
-    <p className="text-white/80 text-lg md:text-xl tracking-wider text-left">
-      (002) <sub className="text-white/50 text-sm">Projects</sub>
-    </p>
-    <p className="text-white text-2xl md:text-3xl font-semibold leading-relaxed text-left">
-      Talented frontend web developer focused on building interactive digital experiences to help businesses grow.
-      Work closely with clients or assist agencies globally.
-    </p>
-  </div>
-</section> */}
+            <section
+                ref={skillsRef}
+                className="w-full py-16 px-6 md:px-12 lg:px-24 bg-gradient-to-l from-black to-teal-900/30 bg-[length:200%_200%] bg-right transition-all duration-1000"
+            >
+                <div className="max-w-4xl mx-auto space-y-6">
+                    <p className="text-white/80 text-lg md:text-xl tracking-wider text-left">
+                        (002) <sub className="text-white/50 text-sm">Projects</sub>
+                    </p>
+                    <p className="text-white text-2xl md:text-3xl font-semibold leading-relaxed text-left">
+                        Talented frontend web developer focused on building interactive digital experiences to help businesses grow.
+                        Work closely with clients or assist agencies globally.
+                    </p>
+                </div>
+            </section>
 
         </>
     );
