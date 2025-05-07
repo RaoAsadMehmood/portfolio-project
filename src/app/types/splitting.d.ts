@@ -1,3 +1,4 @@
+'use client'
 declare module 'splitting' {
     interface SplittingResult {
       el: HTMLElement;

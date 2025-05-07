@@ -6,13 +6,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Navbar from "../components/Navbar";
-import { IoLogoCss3, IoLogoHtml5 } from "react-icons/io";
-import { FaJsSquare, FaReact } from "react-icons/fa";
-import { SiPython, SiTailwindcss } from "react-icons/si";
-import { RiNextjsLine } from "react-icons/ri";
-import { TbBrandFramerMotion } from "react-icons/tb";
 import SkillsIcons from "../components/SkillsIcons";
-import { BiLogoTypescript } from "react-icons/bi";
+import IntroAnimation from "../components/IntroAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -93,6 +88,7 @@ const Home: React.FC = () => {
 
     return (
         <>
+        <IntroAnimation />
             <div className="min-h-screen bg-black relative">
                 {/* Navbar */}
                 <Navbar />
