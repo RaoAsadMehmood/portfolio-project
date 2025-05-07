@@ -7,8 +7,8 @@ import ClientMouseTracker from "../app/components/ClientMouseTracker";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Rao Asad Mehmood Portfolio",
-  description: "Portfolio of Rao Asad Mehmood",
+  title: "Rao Asad Mehmood ",
+  description: "A wesbite showcasing my skills and projects",
 };
 
 export default function RootLayout({
