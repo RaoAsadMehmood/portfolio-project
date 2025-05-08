@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Splitting from "splitting";
 import "splitting/dist/splitting.css";
@@ -8,10 +8,14 @@ import "splitting/dist/splitting.css";
 const IntroAnimation = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLHeadingElement>(null);
+    const [isMounted, setIsMounted] = useState(false); // <-- ✅ Step 1
 
     useEffect(() => {
-        // Split text into characters only on client
-        if (typeof window !== "undefined") {
+        setIsMounted(true); // ✅ Step 2: Set true on mount
+    }, []);
+
+    useEffect(() => {
+        if (isMounted && typeof window !== "undefined") {
             Splitting();
 
             const tl = gsap.timeline();
@@ -38,7 +42,9 @@ const IntroAnimation = () => {
                 },
             });
         }
-    }, []);
+    }, [isMounted]); // ✅ dependency mein isMounted
+
+    if (!isMounted) return null; // ✅ no rendering on server
 
     return (
         <div

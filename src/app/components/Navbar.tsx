@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
 
       <nav
         ref={navRef}
-        className="fixed top-4 left-0 right-0 mx-4 z-50 bg-black/30 backdrop-blur-md rounded-full px-6 py-3 shadow-lg flex justify-between items-center"
+        className="fixed left-0 right-0 mx-4 z-50 bg-black/30 backdrop-blur-md rounded-full px-6 py-3 shadow-lg flex justify-between items-center"
       >
         {/* Logo */}
         <div className="flex ">

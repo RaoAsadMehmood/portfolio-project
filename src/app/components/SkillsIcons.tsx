@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { IoLogoCss3, IoLogoHtml5 } from "react-icons/io";
 import { FaJsSquare, FaReact } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
-import { SiTailwindcss, SiPython } from "react-icons/si";
+import { SiTailwindcss, SiPython, SiSanity } from "react-icons/si";
 import { RiNextjsLine } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
@@ -20,6 +20,7 @@ const icons = [
   { icon: <RiNextjsLine size={120} />, label: "Next.js" },
   { icon: <TbBrandFramerMotion size={120} />, label: "Framer Motion" },
   { icon: <SiPython size={120} />, label: "Python" },
+  { icon: <SiSanity size={120} />, label: "Sanity" },
 ];
 
 export default function SkillsIcons() {

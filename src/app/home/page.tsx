@@ -8,7 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Navbar from "../components/Navbar";
 import SkillsIcons from "../components/SkillsIcons";
+import ProjectShowcase from "../components/ProjectShowcase";
+import SpotlightGradientSection from "../components/SpotLightBackground";
 
+// Dynamically load IntroAnimation (no SSR)
 const IntroAnimation = dynamic(() => import("../components/IntroAnimation"), {
     ssr: false,
 });
@@ -26,11 +29,15 @@ const Home: React.FC = () => {
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setAnimationDone(true);
+            if (!heroRef.current) return;
+
+            console.log("GSAP ran");
+
+            gsap.set(heroRef.current, { autoAlpha: 0 });
 
             gsap.to(heroRef.current, {
-                opacity: 1,
-                duration: 0.8,
+                autoAlpha: 1,
+                duration: 1,
                 ease: "power2.out",
             });
 
@@ -54,34 +61,7 @@ const Home: React.FC = () => {
                     "-=0.6"
                 );
 
-            if (skillsRef.current) {
-                gsap.fromTo(
-                    skillsRef.current,
-                    { opacity: 0, y: 100 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 1,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: skillsRef.current,
-                            start: "top 80%",
-                            toggleActions: "play none none none",
-                        },
-                    }
-                );
-
-                gsap.to(skillsRef.current, {
-                    backgroundPosition: "100% 0",
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: skillsRef.current,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true,
-                    },
-                });
-            }
+            setAnimationDone(true); // hide IntroAnimation after it plays
         }, 2500);
 
         return () => clearTimeout(timeout);
@@ -89,15 +69,17 @@ const Home: React.FC = () => {
 
     return (
         <>
+        <SpotlightGradientSection />
             <div className="overflow-x-hidden">
+                {!animationDone && <IntroAnimation />} {/* Only show until done */}
+                <Navbar />
 
-
-                <IntroAnimation />
+                {/* Hero Section */}
                 <div className="min-h-screen bg-black relative">
-                    <Navbar />
                     <section
                         ref={heroRef}
-                        className="min-h-screen flex items-center justify-center px-4 md:px-8 bg-gradient-to-r from-black to-teal-900/30 opacity-0"
+                        className="min-h-screen flex items-center justify-center px-4 md:px-8 "
+                        style={{ visibility: "hidden" }}
                     >
                         <div className="max-w-3xl">
                             <h1
@@ -137,7 +119,7 @@ const Home: React.FC = () => {
                 {/* Skills Section */}
                 <section
                     ref={skillsRef}
-                    className="w-full py-16 px-6 md:px-12 lg:px-24 bg-gradient-to-l from-black to-teal-900/30 bg-[length:200%_200%] bg-left transition-all duration-1000"
+                    className="w-full py-16 px-6 md:px-12 lg:px-24 "
                 >
                     <div className="max-w-4xl mx-auto space-y-6">
                         <p className="text-white/80 text-lg md:text-xl tracking-wider text-left">
@@ -154,18 +136,20 @@ const Home: React.FC = () => {
                     </div>
                 </section>
 
-                <section
-                    className="w-full py-16 px-6 md:px-12 lg:px-24 bg-gradient-to-l from-black to-teal-900/30 bg-[length:200%_200%] bg-right transition-all duration-1000"
-                >
+                {/* Projects Section */}
+                <section className="w-full py-16 px-6 md:px-12 lg:px-24 bg-gradient-to-l from-black to-teal-900/30 bg-[length:200%_200%] bg-right transition-all duration-1000">
+                
                     <div className="max-w-4xl mx-auto space-y-6">
                         <p className="text-white/80 text-lg md:text-xl tracking-wider text-left">
                             (002) <sub className="text-white/50 text-sm">Projects</sub>
                         </p>
                         <p className="text-white text-2xl md:text-3xl font-semibold leading-relaxed text-left">
-                            Talented frontend web developer focused on building interactive digital experiences to help businesses grow.
-                            Work closely with clients or assist agencies globally.
+                            Talented frontend web developer focused on building interactive digital
+                            experiences to help businesses grow. Work closely with clients or assist
+                            agencies globally.
                         </p>
                     </div>
+                    <ProjectShowcase />
                 </section>
             </div>
         </>
