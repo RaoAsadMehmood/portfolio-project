@@ -10,6 +10,7 @@ import Navbar from "../components/Navbar";
 import SkillsIcons from "../components/SkillsIcons";
 import ProjectShowcase from "../components/ProjectShowcase";
 import SpotlightGradientSection from "../components/SpotLightBackground";
+import ContactSection from "../components/ContactSection";
 
 // Dynamically load IntroAnimation (no SSR)
 const IntroAnimation = dynamic(() => import("../components/IntroAnimation"), {
@@ -118,6 +119,7 @@ const Home: React.FC = () => {
 
                 {/* Skills Section */}
                 <section
+                    id="about"
                     ref={skillsRef}
                     className="w-full py-16 px-6 md:px-12 lg:px-24 "
                 >
@@ -137,7 +139,7 @@ const Home: React.FC = () => {
                 </section>
 
                 {/* Projects Section */}
-                <section className="w-full py-16 px-6 md:px-12 lg:px-24 bg-gradient-to-l from-black to-teal-900/30 bg-[length:200%_200%] bg-right transition-all duration-1000">
+                <section id="projects" className="w-full py-16 px-6 md:px-12 lg:px-24 bg-gradient-to-l from-black to-teal-900/30 bg-[length:200%_200%] bg-right transition-all duration-1000">
                 
                     <div className="max-w-4xl mx-auto space-y-6">
                         <p className="text-white/80 text-lg md:text-xl tracking-wider text-left">
@@ -151,6 +153,8 @@ const Home: React.FC = () => {
                     </div>
                     <ProjectShowcase />
                 </section>
+
+                <ContactSection />
             </div>
         </>
     );

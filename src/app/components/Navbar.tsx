@@ -6,6 +6,8 @@ import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Home, User, Briefcase, Book, Menu, X } from "lucide-react";
 import { FaRegRegistered } from "react-icons/fa";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -38,10 +40,24 @@ const Navbar: React.FC = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const navItems: { name: string; path: string; icon: React.ReactNode }[] = [
-    { name: "", path: "/", icon: <Home size={20} /> },
-    { name: "About", path: "/about", icon: <User size={20} /> },
-    { name: "Work", path: "/work", icon: <Briefcase size={20} /> },
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    setIsOpen(false); // close mobile menu if open
+
+    const target = document.getElementById(targetId);
+    if (target) {
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: { y: target, offsetY: 80 }, // adjust offsetY for your fixed navbar height
+        ease: "power2.inOut"
+      });
+    }
+  };
+
+  const navItems: { name: string; path: string; icon: React.ReactNode; anchor?: boolean }[] = [
+    { name: "", path: "#", icon: <Home size={20} /> },
+    { name: "About", path: "#about", icon: <User size={20} />, anchor: true },
+    { name: "Work", path: "#projects", icon: <Briefcase size={20} />, anchor: true },
     // { name: "Blog", path: "/blog", icon: <Book size={20} /> },
   ];
 
@@ -98,17 +114,29 @@ const Navbar: React.FC = () => {
         <ul className="hidden md:flex gap-6 items-center bg-black/20 backdrop-blur-sm rounded-full px-4 py-2">
           {navItems.map((item) => (
             <li key={item.path}>
-              <Link href={item.path}>
-                <span
-                  className={`nav-link text-white text-sm uppercase tracking-wider px-3 py-2 rounded-full transition-all duration-300 ${currentPath === item.path
-                    ? "bg-white/20"
-                    : "hover:bg-white/10"
-                    }`}
+              {item.anchor ? (
+                <a
+                  href={item.path}
+                  className="nav-link text-white text-sm uppercase tracking-wider px-3 py-2 rounded-full transition-all duration-300 hover:bg-white/10"
+                  onClick={e => handleSmoothScroll(e, item.path.replace('#', ''))}
                 >
                   {item.icon}
                   {item.name && <span>{item.name}</span>}
-                </span>
-              </Link>
+                </a>
+              ) : (
+                <a
+                  href="#"
+                  className="nav-link text-white text-sm uppercase tracking-wider px-3 py-2 rounded-full transition-all duration-300 hover:bg-white/10"
+                  onClick={e => {
+                    e.preventDefault();
+                    gsap.to(window, { duration: 1, scrollTo: { y: 0 }, ease: "power2.inOut" });
+                    setIsOpen(false);
+                  }}
+                >
+                  {item.icon}
+                  {item.name && <span>{item.name}</span>}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -123,17 +151,29 @@ const Navbar: React.FC = () => {
           <ul className="flex flex-col gap-4 items-center">
             {navItems.map((item) => (
               <li key={item.path}>
-                <Link href={item.path} onClick={toggleMenu}>
-                  <span
-                    className={`nav-link text-white text-sm uppercase tracking-wider px-3 py-2 rounded-full transition-all duration-300 ${currentPath === item.path
-                      ? "bg-white/20"
-                      : "hover:bg-white/10"
-                      }`}
+                {item.anchor ? (
+                  <a
+                    href={item.path}
+                    className="nav-link text-white text-sm uppercase tracking-wider px-3 py-2 rounded-full transition-all duration-300 hover:bg-white/10"
+                    onClick={e => handleSmoothScroll(e, item.path.replace('#', ''))}
                   >
                     {item.icon}
                     {item.name && <span>{item.name}</span>}
-                  </span>
-                </Link>
+                  </a>
+                ) : (
+                  <a
+                    href="#"
+                    className="nav-link text-white text-sm uppercase tracking-wider px-3 py-2 rounded-full transition-all duration-300 hover:bg-white/10"
+                    onClick={e => {
+                      e.preventDefault();
+                      gsap.to(window, { duration: 1, scrollTo: { y: 0 }, ease: "power2.inOut" });
+                      setIsOpen(false);
+                    }}
+                  >
+                    {item.icon}
+                    {item.name && <span>{item.name}</span>}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
