@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
             style={{ fontFamily: "'Caveat', cursive" }}
             className="text-4xl text-white flex justify-center items-center gap-2"
           >
-            <Link href="/">RAM.</Link>
+            <Link href="/">AM.</Link>
             <span> <FaRegRegistered size={14} /></span>
           </span>
         </div>

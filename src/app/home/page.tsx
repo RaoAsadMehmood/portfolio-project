@@ -107,7 +107,7 @@ const Home: React.FC = () => {
                                 <Link href="/about">
                                     <button className="flex items-center gap-3 bg-[#04151496] backdrop-blur-sm text-white px-6 py-3 rounded-full hover:bg-white/10 transition-all duration-300 text-sm uppercase tracking-wider">
                                         <span className="w-9 h-9 rounded-[12px] px-[11px] py-[6px] text-white bg-[#9595951a] border-[#9595954d] border border-solid backdrop-blur-sm flex items-center justify-center">
-                                            <span className="text-xs">RAM</span>
+                                            <span className="text-xs">AM</span>
                                         </span>
                                         About Me
                                     </button>

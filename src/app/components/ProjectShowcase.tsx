@@ -19,7 +19,7 @@ const projects = [
   {
     title: "ECOM Hyped | One Stop Shop for all Automation needs",
     image: "/images/Untitled design (4).png",
-    link: "https://e-com-hyped-project.vercel.app/",
+    link: "https://ecomhyped.com/",
     description: "A brand revamp that showcases various automation services for Amazon | ETSY | Shopify | TikTok  ",
     techStack: "Next.js, Tailwind CSS, Framer Motion, Contact Form API",
   },
