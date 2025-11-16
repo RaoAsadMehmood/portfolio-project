@@ -1,3 +1,20 @@
 @import "tailwindcss";
 @import 'splitting/dist/splitting.css';
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap');
+
+
+
+@keyframes whatsapp-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px); 
+    }
+  }
+  
+  .animate-whatsapp-bounce {
+    animation: whatsapp-bounce 2s infinite ease-in-out; 
+  }
+  
+  

@@ -1,8 +1,12 @@
+// app/layout.tsx
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientMouseTracker from "../app/components/ClientMouseTracker";
+import WhatsAppButton from "./components/WhatsAppButton";
+
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,6 +26,9 @@ export default function RootLayout({
       <body className={`${inter.className} bg-black text-white`}>
         <ClientMouseTracker />
         {children}
+        
+        {/* WhatsApp Button: Ab yeh button aapki website ke har page par float karega */}
+        <WhatsAppButton /> 
         
       </body>
     </html>
