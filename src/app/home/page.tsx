@@ -13,6 +13,7 @@ import SkillsIcons from "../components/SkillsIcons";
 import ProjectShowcase from "../components/ProjectShowcase";
 import SpotlightGradientSection from "../components/SpotLightBackground";
 import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
 
 // Dynamically load IntroAnimation (no SSR)
 const IntroAnimation = dynamic(() => import("../components/IntroAnimation"), {
@@ -171,6 +172,7 @@ const Home: React.FC = () => {
 
                 <ContactSection />
             </div>
+            <Footer />
         </>
     );
 };

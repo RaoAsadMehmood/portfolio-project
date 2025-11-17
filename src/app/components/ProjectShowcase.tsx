@@ -21,7 +21,7 @@ const projects = [
     image: "/images/Untitled design (4).png",
     link: "https://ecomhyped.com/",
     description: "A brand revamp that showcases various automation services for Amazon | ETSY | Shopify | TikTok  ",
-    techStack: "Next.js, Tailwind CSS, Framer Motion, Contact Form API",
+    techStack: "Next.js, Tailwind CSS, Framer Motion, Contact Form API, Calendly for scheduling meetings ",
   },
   {
     title: "E-Commerce Store with Sanity CMS",

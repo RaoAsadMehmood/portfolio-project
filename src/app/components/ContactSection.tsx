@@ -34,17 +34,27 @@ const ContactSection = () => {
       ref={sectionRef}
     >
       <div className="max-w-4xl mx-auto text-center">
-        <p className="text-lg md:text-xl font-medium text-gray-400 mb-4 contact-element">(003)</p>
+        <p className="text-lg md:text-xl font-medium text-gray-400 mb-4 contact-element">(003) Ready?</p>
+
+        {/* Updated Heading to reflect AI/Web focus */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 contact-element">
-          Seeking to enhance your business with exceptional front-end development expertise?
+          Ready to automate complex workflows or launch your next scalable web platform?
         </h2>
-        <p className="text-2xl md:text-3xl font-semibold text-gray-200 mb-12 contact-element">
-          Let&apos; connect and discuss your development needs.
+
+        {/* Updated Description */}
+        <p className="text-xl md:text-2xl font-semibold text-gray-200 mb-12 contact-element">
+          Partner with me to design and deploy intelligent <b>AI Agents</b>, or build your high-performance full-stack application from scratch.
         </p>
-        {/* Contact button with animation */}
-        <a href="mailto:your-email@example.com" className="inline-block px-8 py-4 border border-white rounded-full text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 contact-element">
-          hello@example.com
+
+        {/* Updated Contact Button with animation class: animate-pulse-slow */}
+        <a
+          href="mailto:rao.asad.mehmood.dev@example.com"
+          className="contact-element inline-block px-10 py-4 bg-indigo-700 rounded-full text-lg font-bold text-white shadow-xl transition-all duration-300 transform hover:scale-[1.03] hover:bg-indigo-600 border border-indigo-700 hover:border-indigo-600"
+        >
+          Let's Discuss Your Project Now
         </a>
+
+
       </div>
     </section>
   );
