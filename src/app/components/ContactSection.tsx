@@ -51,7 +51,8 @@ const ContactSection = () => {
           href="mailto:rao.asad.mehmood.dev@example.com"
           className="contact-element inline-block px-10 py-4 bg-indigo-700 rounded-full text-lg font-bold text-white shadow-xl transition-all duration-300 transform hover:scale-[1.03] hover:bg-indigo-600 border border-indigo-700 hover:border-indigo-600"
         >
-          Let's Discuss Your Project Now
+          Let&apos;s & Discuss Your Project Now
+
         </a>
 
 
