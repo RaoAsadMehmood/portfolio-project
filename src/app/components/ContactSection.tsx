@@ -27,6 +27,7 @@ const ContactSection = () => {
     return () => ctx.revert();
   }, []);
 
+
   return (
     <section
       className="w-full py-24 px-6 md:px-12 lg:px-24 bg-black text-white flex items-center justify-center min-h-screen"
@@ -47,13 +48,15 @@ const ContactSection = () => {
         </p>
 
         {/* Updated Contact Button with animation class: animate-pulse-slow */}
-        <a
-          href="mailto:rao.asad.mehmood.dev@example.com"
-          className="contact-element inline-block px-10 py-4 bg-indigo-700 rounded-full text-lg font-bold text-white shadow-xl transition-all duration-300 transform hover:scale-[1.03] hover:bg-indigo-600 border border-indigo-700 hover:border-indigo-600"
-        >
-          Let&apos;s & Discuss Your Project Now
+        <button className='float-btn px-10 py-4 bg-indigo-700 rounded-full text-lg font-bold text-white shadow-xl transition-all duration-300 transform hover:scale-[1.03] hover:bg-indigo-600 border border-indigo-700 hover:border-indigo-600'>
+          <a
+            href="mailto:rao.asad.mehmood.dev@example.com"
+            className="contact-element inline-block"
+          >
+            Let&apos;s Connect & Discuss Your Project Now
+          </a>
+        </button>
 
-        </a>
 
 
       </div>

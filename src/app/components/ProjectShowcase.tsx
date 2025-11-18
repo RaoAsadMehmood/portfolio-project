@@ -86,7 +86,7 @@ const ProjectShowcase = () => {
               className="card relative group overflow-hidden rounded-3xl shadow-2xl border border-white/20 bg-[#0c0c0c] cursor-none"
               onMouseMove={handleMouseMove} // Simplified
               onMouseLeave={handleMouseLeave}
-              // Removed direct onClick from here to allow for the overlay button click
+            // Removed direct onClick from here to allow for the overlay button click
             >
               <div className="w-full h-[500px] md:h-[700px] max-w-[1200px] mx-auto relative">
                 <Image
@@ -127,11 +127,19 @@ const ProjectShowcase = () => {
                   </button>
                 </div>
 
-               
+
               </div>
             </div>
           ))}
         </div>
+      </div>
+      <div className="pt-4">
+        <a
+          href="/work"
+          className="inline-block px-8 py-3 bg-indigo-700 border border-indigo-600 rounded-full text-white font-semibold text-sm md:text-base tracking-wide shadow-lg hover:bg-indigo-600 hover:scale-[1.03] transition-all duration-300"
+        >
+          Explore my comprehensive portfolio.
+        </a>
       </div>
     </section>
   );

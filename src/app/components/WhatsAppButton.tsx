@@ -22,7 +22,8 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
 
 
   const buttonClasses = `
-    fixed bottom-6 right-6 z-50 
+    fixed bottom-8 right-6 z-50 
+    my-8
     bg-[#25D366] text-white 
     rounded-full w-16 h-16 
     flex items-center justify-center 

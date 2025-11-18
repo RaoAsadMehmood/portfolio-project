@@ -149,9 +149,19 @@ const Home: React.FC = () => {
                             My expertise lies in automating complex business logic using large language models (<b>LLMs</b>) and translating these powerful backend systems into
                             dynamic, optimized web experiences. I constantly refine my workflow through experimentation in both domains.
                         </p>
+                        <div className="pt-4">
+                            <a
+                                href="/about"
+                                className="inline-block px-8 py-3 bg-indigo-700 border border-indigo-600 rounded-full text-white font-semibold text-sm md:text-base tracking-wide shadow-lg hover:bg-indigo-600 hover:scale-[1.03] transition-all duration-300"
+                            >
+                                Read More About Me
+                            </a>
+                        </div>
+
 
                         <SkillsIcons /> {/* Assuming this component displays tech stack icons */}
                     </div>
+
                 </section>
 
                 {/* Projects Section */}
@@ -163,7 +173,7 @@ const Home: React.FC = () => {
                         </p>
                         <p className="text-white text-2xl md:text-3xl font-semibold leading-relaxed text-left">
                             My portfolio features a mix of <b>Intelligent AI Agents</b> designed to automate complex business processes and <b>high-performance web solutions</b>
-                            crafted for scale. I focus on using <b>AI Agents</b> for workflow optimization while building dynamic, interactive digital experiences that drive growth,
+                             crafted for scale. I focus on using <b>AI Agents</b> for workflow optimization while building dynamic, interactive digital experiences that drive growth,
                             whether assisting clients, agencies, or internal ventures.
                         </p>
                     </div>
