@@ -6,14 +6,13 @@ import "./globals.css";
 import ClientMouseTracker from "../app/components/ClientMouseTracker";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Footer from "./components/Footer";
-// import WhatsAppButton from "@/components/WhatsAppButton";
-// import Footer from "@/components/Footer";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Rao Asad Mehmood",
-  description: "A website showcasing my skills and projects",
+  description: "My personal portfolio website showcasing my skills and projects",
 };
 
 export default function RootLayout({
@@ -43,7 +42,7 @@ export default function RootLayout({
       </head>
 
       <body className={`${inter.className} bg-black text-white`}>
-        <ClientMouseTracker />
+        {/* <ClientMouseTracker /> */}
         <main>
           {children}
         </main>

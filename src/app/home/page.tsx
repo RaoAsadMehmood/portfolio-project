@@ -182,7 +182,7 @@ const Home: React.FC = () => {
 
                 <ContactSection />
             </div>
-            <Footer />
+            
         </>
     );
 };
